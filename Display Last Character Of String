@@ -1,0 +1,19 @@
+
+
+Write a program to first get the string as input for example " welcome home buddy" and output should be
+output = e e y
+
+
+
+--------------------------------------------------python Code------------------------------------------------------------------------
+
+
+n = input('Enter string: ')
+store = []
+for i in n:
+    store.append(i)
+print('required output: ', end = " ")    
+for j in range(len(store)):
+    if store[j] == ' ':
+        print(store[j - 1], end = " ")
+print(store[len(store) - 1])
