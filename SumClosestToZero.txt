@@ -1,0 +1,33 @@
+you have given an array of +ve and -ve elements. output should be addition of two elements such that addition is closest to zero.input = [-3, 5, 6, -5]
+output = 6, -5
+
+Addition of 6 + (-5) = 1 which is smallest number closest to zero(0)
+
+arr = [int(x) for x in input().split()]
+arr.sort()
+closestToZero = arr[0] + arr[1]
+firstOuptut = 0
+secondOutput = 0
+def checkLength(num):
+    lenth = 0
+    if num < 0:
+        while(num < 0):
+            num = num + 1
+            lenth += 1
+    elif num > 0:
+        while(num > 0):
+            num = num - 1
+            lenth += 1
+    return lenth        
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if i == j:
+            pass
+        elif i != j:
+            m = arr[i] + arr[j]
+            if checkLength(closestToZero) > checkLength(m):
+                closestToZero = m
+                firstOuptut = arr[i]
+                secondOutput = arr[j]
+            
+print(firstOuptut," and ", secondOutput)
